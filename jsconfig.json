@@ -1,7 +1,15 @@
+// {
+//   "compilerOptions": {
+//     "paths": {
+//       "@/*": ["./src/*"]
+//     }
+//   }
+// }
 {
   "compilerOptions": {
+    "baseUrl": "src", // This sets the base directory for absolute imports
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./*"] // Optional: This creates an alias where '@' refers to the 'src' directory
     }
   }
 }
