@@ -15,13 +15,13 @@ export default function Step2({ formData, setFormData }) {
 
       <div className="ethnicity-options">
         {ethnicities.map((ethnicity) => (
-          <div
-            key={ethnicity.id}
-            style={{ opacity: formData.ethnicity && formData.ethnicity !== ethnicity.id ? 0.4 : 1 }}
+            <div
+  key={ethnicity.id}
+  style={{ opacity: formData?.ethnicity && formData?.ethnicity !== ethnicity.id ? 0.4 : 1 }}
+  className={`ethnicity-card ${formData?.ethnicity === ethnicity.id ? 'selected' : ''}`}
+  onClick={() => setFormData({ ...formData, ethnicity: ethnicity.id })}
+>
 
-            className={`ethnicity-card ${formData.ethnicity === ethnicity.id ? 'selected' : ''}`}
-            onClick={() => setFormData({ ...formData, ethnicity: ethnicity.id })}
-          >
             <div className="image-wrapper">
               <Image src={ethnicity.image} alt={ethnicity.label} layout="fill" objectFit="cover" />
               <div className="fade-overlay"></div>

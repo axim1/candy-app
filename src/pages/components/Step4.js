@@ -2,7 +2,7 @@ export default function Step4({ formData, handleInputChange, handleSkillChange }
     return (
       <div className="step">
         <h2 className="step-title">Choose Age</h2>
-        <div className="age-display">{formData.age}</div>
+        <div className="age-display">{formData?.age}</div>
   
         <div className="age-slider-container">
           <span className="age-label">Teen (18+)</span>
@@ -11,7 +11,7 @@ export default function Step4({ formData, handleInputChange, handleSkillChange }
             name="age"
             min="18"
             max="50"
-            value={formData.age}
+            value={formData?.age}
             onChange={handleInputChange}
             className="age-slider"
           />
@@ -28,11 +28,11 @@ export default function Step4({ formData, handleInputChange, handleSkillChange }
                 name={skill}
                 min="0"
                 max="100"
-                value={formData.skills[skill]}
+                value={formData?.skills[skill]}
                 onChange={(e) => handleSkillChange(skill, e.target.value)}
                 className="skill-slider"
               />
-              <div className="skill-percentage">{formData.skills[skill]}%</div>
+              <div className="skill-percentage">{formData?.skills[skill]}%</div>
             </div>
           ))}
         </div>

@@ -31,7 +31,7 @@ export default function Step1({ formData, handleInputChange, setFormData }) {
         type="text"
         name="name"
         placeholder="Enter a name"
-        value={formData.name}
+        value={formData?.name || ''}  // Ensure that formData.name is defined
         onChange={handleInputChange}
         className="name-input"
       />
@@ -41,9 +41,9 @@ export default function Step1({ formData, handleInputChange, setFormData }) {
         {relationships.map((relationship) => (
           <div
             key={relationship.id}
-            style={{ opacity: formData.relationship && formData.relationship !== relationship.id ? 0.4 : 1 }}
+            style={{ opacity: formData?.relationship && formData.relationship !== relationship.id ? 0.4 : 1 }}
 
-            className={`option ${formData.relationship === relationship.id ? 'selected' : ''}`}
+            className={`option ${formData?.relationship === relationship.id ? 'selected' : ''}`}
             onClick={() => setFormData({ ...formData, relationship: relationship.id })}
           >
             <Image src={relationship.icon} alt={relationship.label} width={90} height={90} />

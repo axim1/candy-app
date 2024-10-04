@@ -27,9 +27,9 @@ export default function Step3({ formData, setFormData }) {
         {bodyTypes.map((body) => (
           <div
             key={body.id}
-            style={{ opacity: formData.bodyType && formData.bodyType !== body.id ? 0.4 : 1 }}
+            style={{ opacity: formData?.bodyType && formData?.bodyType !== body.id ? 0.4 : 1 }}
 
-            className={`option ${formData.bodyType === body.id ? 'selected' : ''}`}
+            className={`option ${formData?.bodyType === body.id ? 'selected' : ''}`}
             onClick={() => setFormData({ ...formData, bodyType: body.id })}
           >
 
@@ -44,9 +44,9 @@ export default function Step3({ formData, setFormData }) {
         {breastSizes.map((breast) => (
           <div
             key={breast.id}
-            style={{ opacity: formData.breastSize && formData.breastSize !== breast.id ? 0.4 : 1 }}
+            style={{ opacity: formData?.breastSize && formData.breastSize !== breast.id ? 0.4 : 1 }}
 
-            className={`option ${formData.breastSize === breast.id ? 'selected' : ''}`}
+            className={`option ${formData?.breastSize === breast.id ? 'selected' : ''}`}
             onClick={() => setFormData({ ...formData, breastSize: breast.id })}
           >
             <Image src={breast.image} alt={breast.label} layout="fill" objectFit="cover" />
@@ -60,9 +60,9 @@ export default function Step3({ formData, setFormData }) {
         {buttSizes.map((butt) => (
           <div
             key={butt.id}
-            style={{ opacity: formData.buttSize && formData.buttSize !== butt.id ? 0.4 : 1 }}
+            style={{ opacity: formData?.buttSize && formData?.buttSize !== butt.id ? 0.4 : 1 }}
 
-            className={`option ${formData.buttSize === butt.id ? 'selected' : ''}`}
+            className={`option ${formData?.buttSize === butt.id ? 'selected' : ''}`}
             onClick={() => setFormData({ ...formData, buttSize: butt.id })}
           >
             <Image src={butt.image} alt={butt.label} layout="fill" objectFit="cover" />
